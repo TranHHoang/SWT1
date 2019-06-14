@@ -1,0 +1,17 @@
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\bin\Debug\NUnit3.TestAdapter.dll
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\bin\Debug\NUnit3.TestAdapter.pdb
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\bin\Debug\nunit.engine.dll
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\bin\Debug\nunit.engine.api.dll
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\bin\Debug\WBTestArray.dll
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\bin\Debug\WBTestArray.pdb
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\bin\Debug\nunit.framework.dll
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\bin\Debug\SWTArray.exe
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\bin\Debug\SWTArray.pdb
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\bin\Debug\SWTArray.exe.config
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\bin\Debug\nunit.framework.pdb
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\bin\Debug\nunit.framework.xml
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\obj\Debug\WBTestArray.csprojAssemblyReference.cache
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\obj\Debug\WBTestArray.csproj.CoreCompileInputs.cache
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\obj\Debug\WBTestArray.csproj.CopyComplete
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\obj\Debug\WBTestArray.dll
+C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\WBTestArray\obj\Debug\WBTestArray.pdb
