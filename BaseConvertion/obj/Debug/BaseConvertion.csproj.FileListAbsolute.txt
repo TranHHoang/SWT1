@@ -1,0 +1,12 @@
+C:\Users\stalk\source\repos\BaseConvertion\BaseConvertion\obj\Debug\BaseConvertion.csprojAssemblyReference.cache
+C:\Users\stalk\source\repos\BaseConvertion\BaseConvertion\obj\Debug\BaseConvertion.csproj.CoreCompileInputs.cache
+C:\Users\stalk\source\repos\BaseConvertion\BaseConvertion\bin\Debug\BaseConvertion.exe
+C:\Users\stalk\source\repos\BaseConvertion\BaseConvertion\bin\Debug\BaseConvertion.pdb
+C:\Users\stalk\source\repos\BaseConvertion\BaseConvertion\obj\Debug\BaseConvertion.exe
+C:\Users\stalk\source\repos\BaseConvertion\BaseConvertion\obj\Debug\BaseConvertion.pdb
+C:\Users\user\Downloads\BaseConvertion\BaseConvertion\bin\Debug\BaseConvertion.exe
+C:\Users\user\Downloads\BaseConvertion\BaseConvertion\bin\Debug\BaseConvertion.pdb
+C:\Users\user\Downloads\BaseConvertion\BaseConvertion\obj\Debug\BaseConvertion.csprojAssemblyReference.cache
+C:\Users\user\Downloads\BaseConvertion\BaseConvertion\obj\Debug\BaseConvertion.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\BaseConvertion\BaseConvertion\obj\Debug\BaseConvertion.exe
+C:\Users\user\Downloads\BaseConvertion\BaseConvertion\obj\Debug\BaseConvertion.pdb
