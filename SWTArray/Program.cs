@@ -9,35 +9,20 @@ namespace SWTArray
         {
             bool check = true;
 
-            PathOutput += "A";
-            if (!int.TryParse(input, out int num)) // A
+            try
             {
-                PathOutput += "B";
+                int num = Convert.ToInt32(input); // A
+            }
+            catch (OverflowException)
+            {
                 check = false; // B
             }
-            else
+            catch (FormatException)
             {
-                PathOutput += "C";
-                if (num < int.MinValue) // C
-                {
-                    PathOutput += "D";
-                    check = false; // D
-                }
-                else
-                {
-                    PathOutput += "E";
-                    if (num > int.MaxValue) // E
-                    {
-                        PathOutput += "F";
-                        check = false; // F
-                    } // G
-                    PathOutput += "G";
-                } // H
-                PathOutput += "H";
+                check = false; // C
             }
 
-            PathOutput += "I";
-            return check; // I
+            return check; // D
         }
 
         public static void add(ref int[] a, string input)
@@ -95,6 +80,7 @@ namespace SWTArray
         {
             // A'
             bool isValid = checkValidate(x);
+            PathOutput = "";
             PathOutput += "A'";
             PathOutput += "B";
             if (isValid) // B

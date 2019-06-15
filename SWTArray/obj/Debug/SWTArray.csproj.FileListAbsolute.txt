@@ -19,3 +19,10 @@ C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\SWTArray\ob
 C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\SWTArray\obj\Debug\SWTArray.csproj.CoreCompileInputs.cache
 C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\SWTArray\obj\Debug\SWTArray.exe
 C:\Users\TranHoang\Downloads\SWTArray-2\SWTArray-2\SWTArray\SWTArray\SWTArray\obj\Debug\SWTArray.pdb
+C:\Users\tran hoang\Source\Repos\SWT1\SWTArray\bin\Debug\SWTArray.exe.config
+C:\Users\tran hoang\Source\Repos\SWT1\SWTArray\bin\Debug\SWTArray.exe
+C:\Users\tran hoang\Source\Repos\SWT1\SWTArray\bin\Debug\SWTArray.pdb
+C:\Users\tran hoang\Source\Repos\SWT1\SWTArray\obj\Debug\SWTArray.csprojAssemblyReference.cache
+C:\Users\tran hoang\Source\Repos\SWT1\SWTArray\obj\Debug\SWTArray.csproj.CoreCompileInputs.cache
+C:\Users\tran hoang\Source\Repos\SWT1\SWTArray\obj\Debug\SWTArray.exe
+C:\Users\tran hoang\Source\Repos\SWT1\SWTArray\obj\Debug\SWTArray.pdb

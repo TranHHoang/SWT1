@@ -56,5 +56,24 @@ namespace WBTestArray
             Assert.AreEqual(expectedEnd, inputArr[inputArr.Length - 1]);
             Assert.AreEqual(expectedPath, Program.PathOutput);
         }
+
+        // White box tesing 
+        // Technique: statement coverage
+        [Test]
+        public void TestRemove()
+        {
+            var inputArr = new[] { 1, 2, 3, 4 };
+            var input = "abc";
+
+            var expectedSize = 3;
+            var expectedEnd = 4;
+            var expectedPath = "AD";
+
+            Program.removea(ref inputArr, "2");
+
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedEnd, inputArr[inputArr.Length - 1]);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
     }
 }
