@@ -11,26 +11,29 @@ namespace SWTArray
 
             try
             {
+                PathOutput += "A";
                 int num = Convert.ToInt32(input); // A
             }
-            catch (OverflowException)
+            catch (OverflowException) // B
             {
-                check = false; // B
-            }
-            catch (FormatException)
-            {
+                PathOutput += "BC";
                 check = false; // C
             }
+            catch (FormatException) // D
+            {
+                PathOutput += "DE";
+                check = false; // E
+            }
 
-            return check; // D
+            PathOutput += "F";
+            return check; // F
         }
 
         public static void add(ref int[] a, string input)
         {
             // A' 
             bool isValid = checkValidate(input);
-            PathOutput = "";
-            PathOutput += "A'";
+            PathOutput = "A'";
 
             PathOutput += "B";
             if (isValid) // B
@@ -49,15 +52,15 @@ namespace SWTArray
         {
             // A'
             bool isValid = checkValidate(x);
-            PathOutput += "A'";
             int result = -1;
+
+            PathOutput =  "A'";
 
             PathOutput += "B";
             if (isValid) // B
             {
-                // C
                 PathOutput += "C";
-                for (int i = 0; i < a.Length; i++)
+                for (int i = 0; i < a.Length; i++) // C
                 {
                     PathOutput += "D";
                     if (a[i] == Convert.ToInt32(x)) // D
@@ -80,8 +83,8 @@ namespace SWTArray
         {
             // A'
             bool isValid = checkValidate(x);
-            PathOutput = "";
-            PathOutput += "A'";
+            PathOutput = "A'";
+
             PathOutput += "B";
             if (isValid) // B
             {
@@ -106,6 +109,7 @@ namespace SWTArray
                     } // H
                     PathOutput += "H";
                 } // I
+
                 PathOutput += "I";
                 PathOutput += "J";
                 if (count != a.Length) // J
@@ -124,7 +128,7 @@ namespace SWTArray
         public static void removeall(ref int[] a, string x)
         {
             bool isValid = checkValidate(x); // A'
-            PathOutput += "A'";
+            PathOutput = "A'";
             PathOutput += "B";
             if (isValid) // B
             {
