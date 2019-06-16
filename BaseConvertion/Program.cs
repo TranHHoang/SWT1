@@ -112,34 +112,30 @@ namespace BaseConvertion
 
         static bool checkBinary(string num)
         {
-            bool check = false; // A
-            PathOutput = "A";
-
+            bool check = false; 
+            
             PathOutput += "B";
-            if (check) // B
+            foreach (char x in num) // B
             {
                 PathOutput += "C";
-                foreach (char x in num) // C
+                if (x != '0' && x != '1') // C
                 {
                     PathOutput += "D";
-                    if (x != '0' && x != '1') // D
-                    {
-                        PathOutput += "E";
-                        check = false; // E
-                        break;
-                    }
-                    else
-                    {
-                        PathOutput += "F";
-                        check = true; // F
-                    } // G
-                    PathOutput += "G";
-                } // H
-                PathOutput += "H";
-            } // I
+                    check = false; // D
+                    break;
+                }
+                else
+                {
+                    PathOutput += "E";
+                    check = true; // E
+                } // F
+                PathOutput += "F";
+            } // G
+            PathOutput += "G";
+            
 
-            PathOutput += "IJ";
-            return check; // J
+            PathOutput += "I";
+            return check; // I
         }
         
         static bool CheckOctal(string num)
