@@ -213,9 +213,9 @@ namespace BaseConvertion
                 sum += (int)(char.GetNumericValue(num[i]) * Math.Pow(2, count));
                 count++;
             }
-            PathOutput += "C";
+            PathOutput += "CD";
             // C
-            return sum;
+            return sum; // D
         }
 
         static int ConvertOctal(int x)
