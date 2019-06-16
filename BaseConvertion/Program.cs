@@ -12,11 +12,60 @@ namespace BaseConvertion
         static void Main(string[] args)
         {
             Console.WriteLine("======================== Convert ======================");
-            bool flag;
             do
             {
-                flag = DisplayMenu();
-            } while (flag);
+                string num;
+                string Hexa;
+                string choose;
+                
+                Console.WriteLine("======================================================");
+                Console.WriteLine("1. Convert binary number to decimal number.");
+                Console.WriteLine("2. Convert octal number to decimal number.");
+                Console.WriteLine("3. Convert hexadecimal number to decimal number.");
+                Console.WriteLine("4. Exit.");
+                Console.WriteLine("======================================================");
+                Console.Write("Please choose number (1 - 4): ");
+                
+                choose = Console.ReadLine();
+                bool check = checkValidate(choose, 1, 4); 
+                if (check)
+                {
+                    switch (Convert.ToInt32(choose))
+                    {
+                        case 1:
+                            Console.Write("enter binary number: ");
+                            num = Console.ReadLine();
+                            check = checkBinary(num); // H
+                            if (check) // I
+                            {
+                                // J
+                                Console.WriteLine($"Binary {num} to decimal {ConvertBinary(num)}");
+                            }
+                            break;
+                        case 2:
+                            Console.Write("enter octal number: ");
+                            num = Console.ReadLine();
+                            check = CheckOctal(num);
+                            if (check)
+                            {
+                                Console.WriteLine($"Octal {num} to decimal {ConvertOctal(Convert.ToInt32(num))}");
+                            }
+                            break;
+                        case 3:
+                            Console.Write("enter Hexadecimal number: ");
+                            Hexa = Console.ReadLine();
+                            check = CheckHexadecimal(Hexa); 
+                            if (check)
+                            {
+                                Console.WriteLine($"Hexadecimal {Hexa} to decimal {ConvertHexadecimal(Hexa)}");
+                            }
+                            break;
+                        case 4:
+                        default:
+                            return;
+                    }
+                }
+            } while (true);
         }
 
         static bool checkValidate(string input, int min, int max)
@@ -44,6 +93,7 @@ namespace BaseConvertion
                     } // F
                     PathOutput += "F";
                 }// G
+                PathOutput += "G";
             }
             catch (OverflowException) // H
             {
@@ -63,52 +113,72 @@ namespace BaseConvertion
         static bool checkBinary(string num)
         {
             bool check = checkValidate(num, int.MinValue, int.MaxValue); // A'
+            PathOutput = "A'";
+
+            PathOutput += "B";
             if (check) // B
             {
+                PathOutput += "C";
                 foreach (char x in num) // C
                 {
+                    PathOutput += "D";
                     if (x != '0' && x != '1') // D
                     {
+                        PathOutput += "E";
                         check = false; // E
                         break;
                     }
                     else
                     {
+                        PathOutput += "F";
                         check = true; // F
                     } // G
-                }
-            } // H
-            
+                    PathOutput += "G";
+                } // H
+                PathOutput += "H";
+            }
+
+            PathOutput += "I";
             return check; // I
         }
 
         static bool CheckOctal(string num)
         {
             int mod, temp;
-            bool check = checkValidate(num, int.MinValue, int.MaxValue); // A'1
+            bool check = checkValidate(num, int.MinValue, int.MaxValue); // A'
+            PathOutput = "A'";
+            PathOutput += "B";
             if (check) // B
             {
+                PathOutput += "C";
                 // C
                 temp = Convert.ToInt32(num);
+                PathOutput += "D";
                 while (temp > 0) // D
                 {
+                    PathOutput += "E";
                     // E
                     mod = temp % 10;
                     temp /= 10;
+                    PathOutput += "F";
                     if (mod > 7) // F
                     {
+                        PathOutput += "G";
                         // G
                         check = false;
                         break;
                     }
                     else
                     {
+                        PathOutput += "H";
                         // H
                         check = true;
                     } // I
-                }
+                    PathOutput += "I";
+                } // J
+                PathOutput += "J";
             }
-            // J
+            PathOutput += "K";
             return check; // K
         }
 
@@ -116,12 +186,15 @@ namespace BaseConvertion
         {
             int count = 0;
             int sum = 0;
+            PathOutput = "A";
             for (int i = num.Length - 1; i >= 0; i--) // A
             {
+                PathOutput += "B";
                 // B
                 sum += (int)(char.GetNumericValue(num[i]) * Math.Pow(2, count));
                 count++;
             }
+            PathOutput += "C";
             // C
             return sum;
         }
@@ -131,8 +204,11 @@ namespace BaseConvertion
             int mod;
             int count = 0;
             int sum = 0;
+            PathOutput = "A";
             while (x > 0) // A
             {
+                PathOutput += "B";
+
                 // B
                 mod = x % 10;
                 x /= 10;
@@ -140,109 +216,62 @@ namespace BaseConvertion
                 count++;
             }
             // C
+            PathOutput += "C";
             return sum;
         }
 
         static bool CheckHexadecimal(string input)
         {
             bool check = true;
+            PathOutput += "A";
             foreach (char x in input) // A
             {
+                PathOutput += "B";
                 if (x < '0' || ('9' < x && x < 'A') || ('F' < x && x < 'a') || x > 'f') // B
                 {
+                    PathOutput += "C";
                     check = false; // C
                     break;
-                } // E
-            } 
-            // F
+                } // D
+                PathOutput += "D";
+            } // E
+            PathOutput += "E";
             return check;
         }
 
         static int ConvertHexadecimal(String Hexa)
         {
+            PathOutput += "A";
             Hexa = Hexa.ToUpper(); // A
             int sum = 0;
             int count = 0;
-            Char[] temp = Hexa.ToCharArray(); // B
+            PathOutput += "B";
+            char[] temp = Hexa.ToCharArray(); // B
+
+            PathOutput += "C";
             for (int i = temp.Length - 1; i >= 0; i--) // C
             {
-                if (Char.IsDigit(temp[i])) // D
+                PathOutput += "D";
+                if (char.IsDigit(temp[i])) // D
                 {
+                    PathOutput += "E";
                     // E
                     sum += (int)(Char.GetNumericValue(temp[i]) * Math.Pow(16, count));
                     count++;
                 }
                 else
                 {
+                    PathOutput += "F";
                     // F
                     int num = temp[i] - 'A' + 10;
                     sum += (int)(num * Math.Pow(16, count));
                     count++;
                 } // G
+                PathOutput += "G";
             }
+            PathOutput += "H";
             // H
             return sum;
-        }
-
-        static bool DisplayMenu()
-        {
-            string num;
-            string Hexa;
-            string choose;
-            // A
-            Console.WriteLine("======================================================");
-            Console.WriteLine("1. Convert binary number to decimal number.");
-            Console.WriteLine("2. Convert octal number to decimal number.");
-            Console.WriteLine("3. Convert hexadecimal number to decimal number.");
-            Console.WriteLine("4. Exit.");
-            Console.WriteLine("======================================================");
-            Console.Write("Please choose number (1 - 4): ");
-            // B
-            choose = Console.ReadLine();
-            bool check = checkValidate(choose, 1, 4); // C'
-            if (check) // D
-            {
-                switch (Convert.ToInt32(choose)) // E
-                {
-                    case 1: // F
-                        // G
-                        Console.Write("enter binary number: ");
-                        num = Console.ReadLine();
-                        check = checkBinary(num); // H
-                        if (check) // I
-                        {
-                            // J
-                            Console.WriteLine($"Binary {num} to decimal {ConvertBinary(num)}");
-                        }
-                        break;
-                    case 2: // K
-                        // L
-                        Console.Write("enter octal number: ");
-                        num = Console.ReadLine();
-                        check = CheckOctal(num); // M
-                        if (check) // N
-                        {
-                            // O
-                            Console.WriteLine($"Octal {num} to decimal {ConvertOctal(Convert.ToInt32(num))}");
-                        }
-                        break;
-                    case 3: // P
-                        // Q
-                        Console.Write("enter Hexadecimal number: ");
-                        Hexa = Console.ReadLine();
-                        check = CheckHexadecimal(Hexa); // R
-                        if (check) // S
-                        {
-                            // T
-                            Console.WriteLine($"Hexadecimal {Hexa} to decimal {ConvertHexadecimal(Hexa)}");
-                        }
-                        break;
-                    case 4: // U
-                        // V
-                        return false;
-                } // W
-            } // X
-            return true; // Y
         }
     }
 }
