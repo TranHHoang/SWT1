@@ -170,9 +170,8 @@ namespace BaseConversion
         {
             int count = 0;
             int sum = 0;
-            PathOutput = "A'";
             bool check = checkBinary(num); // A'
-
+            PathOutput = "A'";
             PathOutput += "B";
             if (check) // B
             {
@@ -195,8 +194,8 @@ namespace BaseConversion
             int mod;
             int count = 0;
             int sum = 0;
-            PathOutput = "A'";
             bool Check = CheckOctal(x); // A'
+            PathOutput = "A'";
             PathOutput += "B";
             if (Check) // B
             {
@@ -224,8 +223,8 @@ namespace BaseConversion
         {
             int sum = 0;
             int count = 0;
-            PathOutput = "A'";
             bool Check = CheckHexadecimal(Hexa); // A'
+            PathOutput = "A'";
             PathOutput += "B";
             if (Check) // B
             {
