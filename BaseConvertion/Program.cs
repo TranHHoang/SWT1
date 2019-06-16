@@ -112,8 +112,8 @@ namespace BaseConvertion
 
         static bool checkBinary(string num)
         {
-            bool check = checkValidate(num, int.MinValue, int.MaxValue); // A'
-            PathOutput = "A'";
+            bool check = false; // A
+            PathOutput = "A";
 
             PathOutput += "B";
             if (check) // B
@@ -141,7 +141,7 @@ namespace BaseConvertion
             PathOutput += "IJ";
             return check; // J
         }
-
+        
         static bool CheckOctal(string num)
         {
             int mod, temp;
@@ -235,12 +235,10 @@ namespace BaseConvertion
                 count++;
             }
             // C
-            PathOutput += "C";
-            return sum;
+            PathOutput += "CD";
+            return sum; // D
         }
-
         
-
         static int ConvertHexadecimal(String Hexa)
         {
             PathOutput += "A";
@@ -270,10 +268,10 @@ namespace BaseConvertion
                     count++;
                 } // G
                 PathOutput += "G";
-            }
-            PathOutput += "H";
-            // H
-            return sum;
+            } // H
+            PathOutput += "HI";
+
+            return sum; // I
         }
     }
 }
