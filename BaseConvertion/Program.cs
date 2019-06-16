@@ -130,7 +130,7 @@ namespace BaseConversion
 
         public static bool CheckOctal(string input)
         {
-            bool check = false;
+            bool check = true;
             PathOutput = "A";
             foreach (char x in input) // A
             {
@@ -175,7 +175,7 @@ namespace BaseConversion
             PathOutput += "B";
             if (check) // B
             {
-                PathOutput = "C";
+                PathOutput += "C";
                 for (int i = num.Length - 1; i >= 0; i--) // C
                 {
                     // D

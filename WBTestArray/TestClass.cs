@@ -97,8 +97,8 @@ namespace WBTestArray
         [Test]
         public void TestSearch1()
         {
-            var inputArr = new[] { 1, 2, 3, 4 };
-            var input = "abc";
+            var inputArr = new[] { 1, 2, 3, 4, 5 };
+            var input = "world";
 
             var expectedOutput = -1;
             var expectedPath = "A'BHI";
@@ -112,11 +112,11 @@ namespace WBTestArray
         [Test]
         public void TestSearch2()
         {
-            var inputArr = new[] { 1, 2, 3, 4 };
-            var input = "5";
+            var inputArr = new[] { 1 };
+            var input = "100";
 
             var expectedOutput = -1;
-            var expectedPath = "A'BCDFDFDFDFGHI";
+            var expectedPath = "A'BCDFGHI";
 
             Assert.AreEqual(expectedOutput, Program.search(inputArr, input));
             Assert.AreEqual(expectedPath, Program.PathOutput);
@@ -127,8 +127,8 @@ namespace WBTestArray
         [Test]
         public void TestSearch3()
         {
-            var inputArr = new[] { 1, 2, 3, 4 };
-            var input = "1";
+            var inputArr = new[] { 9, 10, 11 };
+            var input = "9";
 
             var expectedOutput = 0;
             var expectedPath = "A'BCDEGHI";
@@ -195,11 +195,11 @@ namespace WBTestArray
         [Test]
         public void TestRemoveAll1()
         {
-            var inputArr = new[] { 1, 1, 2, 3 };
-            var input = "abc";
+            var inputArr = new[] { 1, 1, 3, 2, 3 };
+            var input = "lol =)))";
 
-            var expectedSize = 4;
-            var expectedArr = new[] { 1, 1, 2, 3 };
+            var expectedSize = 5;
+            var expectedArr = new[] { 1, 1, 3, 2, 3 };
             var expectedPath = "A'BM";
 
             Program.removeall(ref inputArr, input);
@@ -213,12 +213,12 @@ namespace WBTestArray
         [Test]
         public void TestRemoveAll2()
         {
-            var inputArr = new[] { 1, 1, 2, 3 };
+            var inputArr = new[] { 1, 1, 2, 2, 3 };
             var input = "1";
 
-            var expectedSize = 2;
-            var expectedArr = new[] { 2, 3 };
-            var expectedPath = "A'BCDEFFFGHDEFFGHDHDHIJKLM";
+            var expectedSize = 3;
+            var expectedArr = new[] { 2, 2, 3 };
+            var expectedPath = "A'BCDEFFFFGHDEFFFGHDHDHDHIJKLM";
 
             Program.removeall(ref inputArr, input);
 
@@ -420,8 +420,8 @@ namespace WBTestArray
         [Test]
         public void TestSearch4()
         {
-            var inputArr = new[] { 1, 2, 3, 4 };
-            var input = "abc";
+            var inputArr = new[] { 10, 2, 5 };
+            var input = "lplplpl";
 
             var expectedOutput = -1;
             var expectedPath = "A'BHI";
@@ -448,7 +448,7 @@ namespace WBTestArray
         [Test]
         public void TestSearch6()
         {
-            var inputArr = new[] { 1, 2, 3, 4 };
+            var inputArr = new[] { 1, 1, 1, 1, 1, 1 };
             var input = "1";
 
             var expectedOutput = 0;
@@ -519,11 +519,11 @@ namespace WBTestArray
         public void TestRemoveAll3()
         {
             // Change test case
-            var inputArr = new[] { 1, 1, 2, 3 };
-            var input = "abc";
+            var inputArr = new[] { 10, 10, 10 };
+            var input = "SWT321";
 
-            var expectedSize = 4;
-            var expectedArr = new[] { 1, 1, 2, 3 };
+            var expectedSize = 3;
+            var expectedArr = new[] { 10, 10, 10 };
             var expectedPath = "A'BM";
 
             Program.removeall(ref inputArr, input);
@@ -537,12 +537,12 @@ namespace WBTestArray
         [Test]
         public void TestRemoveAll4()
         {
-            var inputArr = new[] { 1, 1, 2, 3 };
+            var inputArr = new[] { 1, 1, 1, 1, 5, 5 };
             var input = "1";
 
             var expectedSize = 2;
-            var expectedArr = new[] { 2, 3 };
-            var expectedPath = "A'BCDEFFFGHDEFFGHDHDHIJKLM";
+            var expectedArr = new[] { 5, 5 };
+            var expectedPath = "A'BCDEFFFFFGHDEFFFFGHDEFFFGHDEFFGHDHDHIJKLM";
 
             Program.removeall(ref inputArr, input);
 
@@ -555,12 +555,12 @@ namespace WBTestArray
         [Test]
         public void TestRemoveAll5()
         {
-            var inputArr = new[] { 1, 1, 2, 3 };
+            var inputArr = new[] { 100, 100 };
             var input = "10";
 
-            var expectedSize = 4;
-            var expectedArr = new[] { 1, 1, 2, 3 };
-            var expectedPath = "A'BCDHDHDHDHIJLM";
+            var expectedSize = 2;
+            var expectedArr = new[] { 100, 100 };
+            var expectedPath = "A'BCDHDHIJLM";
 
             Program.removeall(ref inputArr, input);
 
@@ -730,11 +730,11 @@ namespace WBTestArray
         public void TestRemoveAll6()
         {
             // Change test case
-            var inputArr = new[] { 1, 1, 2, 3 };
-            var input = "abc";
+            var inputArr = new[] { 9, 9, 8, 7 };
+            var input = "zzzzzzzzzzzzzzzzz";
 
             var expectedSize = 4;
-            var expectedArr = new[] { 1, 1, 2, 3 };
+            var expectedArr = new[] { 9, 9, 8, 7 };
             var expectedPath = "A'BM";
 
             Program.removeall(ref inputArr, input);
@@ -749,12 +749,12 @@ namespace WBTestArray
         public void TestRemoveAll7()
         {
             // Change test case
-            var inputArr = new[] { 1, 1, 2, 3 };
+            var inputArr = new[] { 1, 9, 2 };
             var input = "1";
 
             var expectedSize = 2;
-            var expectedArr = new[] { 2, 3 };
-            var expectedPath = "A'BCDEFFFGHDEFFGHDHDHIJKLM";
+            var expectedArr = new[] { 9, 2 };
+            var expectedPath = "A'BCDEFFGHDHDHIJKLM";
 
             Program.removeall(ref inputArr, input);
 
@@ -768,12 +768,12 @@ namespace WBTestArray
         public void TestRemoveAll8()
         {
             // Change test case
-            var inputArr = new[] { 1, 1, 2, 3 };
-            var input = "10";
+            var inputArr = new[] { 1, 1, 2, 3, 5 };
+            var input = "-99999";
 
-            var expectedSize = 4;
-            var expectedArr = new[] { 1, 1, 2, 3 };
-            var expectedPath = "A'BCDHDHDHDHIJLM";
+            var expectedSize = 5;
+            var expectedArr = new[] { 1, 1, 2, 3, 5 };
+            var expectedPath = "A'BCDHDHDHDHDHIJLM";
 
             Program.removeall(ref inputArr, input);
 
@@ -786,9 +786,9 @@ namespace WBTestArray
         [Test]
         public void TestSortUp4()
         {
-            var inputArr = new[] { 1, 2, 4, 3 };
+            var inputArr = new[] { 5, 6, 100, 9 };
 
-            var expectedArr = new[] { 1, 2, 3, 4 };
+            var expectedArr = new[] { 5, 6, 9, 100 };
             var expectedPath = "ABCECECEFBCECEFBCDEFBFG";
 
             Program.selectionsortup(inputArr);
@@ -801,9 +801,9 @@ namespace WBTestArray
         [Test]
         public void TestSortUp5()
         {
-            var inputArr = new[] { 1, 2, 3, 4 };
+            var inputArr = new[] { 101, 102, 103, 1000 };
 
-            var expectedArr = new[] { 1, 2, 3, 4 };
+            var expectedArr = new[] { 101, 102, 103, 1000 };
             var expectedPath = "ABCECECEFBCECEFBCEFBFG";
 
             Program.selectionsortup(inputArr);
@@ -817,9 +817,9 @@ namespace WBTestArray
         [Test]
         public void TestSortDown4()
         {
-            var inputArr = new[] { 4, 3, 1, 2 };
+            var inputArr = new[] { 4, 3, -5, 2 };
 
-            var expectedArr = new[] { 4, 3, 2, 1 };
+            var expectedArr = new[] { 4, 3, 2, -5 };
             var expectedPath = "ABCECECEFBCECEFBCDEFBFG";
 
             Program.selectionsortdown(inputArr);
@@ -832,9 +832,9 @@ namespace WBTestArray
         [Test]
         public void TestSortDown5()
         {
-            var inputArr = new[] { 4, 3, 2, 1 };
+            var inputArr = new[] { 10, 9, 5, 0 };
 
-            var expectedArr = new[] { 4, 3, 2, 1 };
+            var expectedArr = new[] { 10, 9, 5, 0 };
             var expectedPath = "ABCECECEFBCECEFBCEFBFG";
 
             Program.selectionsortdown(inputArr);

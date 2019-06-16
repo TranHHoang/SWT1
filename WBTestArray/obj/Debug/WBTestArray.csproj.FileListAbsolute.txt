@@ -61,7 +61,6 @@ D:\IT\0_University_Program\Summer 2019\SWT\SWT1\WBTestArray\bin\Debug\SWTArray.p
 D:\IT\0_University_Program\Summer 2019\SWT\SWT1\WBTestArray\bin\Debug\SWTArray.exe.config
 D:\IT\0_University_Program\Summer 2019\SWT\SWT1\WBTestArray\bin\Debug\nunit.framework.pdb
 D:\IT\0_University_Program\Summer 2019\SWT\SWT1\WBTestArray\bin\Debug\nunit.framework.xml
-D:\IT\0_University_Program\Summer 2019\SWT\SWT1\WBTestArray\obj\Debug\WBTestArray.csprojAssemblyReference.cache
 D:\IT\0_University_Program\Summer 2019\SWT\SWT1\WBTestArray\obj\Debug\WBTestArray.csproj.CoreCompileInputs.cache
 D:\IT\0_University_Program\Summer 2019\SWT\SWT1\WBTestArray\obj\Debug\WBTestArray.csproj.CopyComplete
 D:\IT\0_University_Program\Summer 2019\SWT\SWT1\WBTestArray\obj\Debug\WBTestArray.dll
