@@ -136,10 +136,10 @@ namespace BaseConvertion
                     PathOutput += "G";
                 } // H
                 PathOutput += "H";
-            }
+            } // I
 
-            PathOutput += "I";
-            return check; // I
+            PathOutput += "IJ";
+            return check; // J
         }
 
         static bool CheckOctal(string num)
@@ -177,9 +177,28 @@ namespace BaseConvertion
                     PathOutput += "I";
                 } // J
                 PathOutput += "J";
-            }
-            PathOutput += "K";
-            return check; // K
+            } // K
+            PathOutput += "KL";
+            return check; // L
+        }
+
+        static bool CheckHexadecimal(string input)
+        {
+            bool check = true;
+            PathOutput += "A";
+            foreach (char x in input) // A
+            {
+                PathOutput += "B";
+                if (x < '0' || ('9' < x && x < 'A') || ('F' < x && x < 'a') || x > 'f') // B
+                {
+                    PathOutput += "C";
+                    check = false; // C
+                    break;
+                } // D
+                PathOutput += "D";
+            } // E
+            PathOutput += "EF";
+            return check; // F
         }
 
         static int ConvertBinary(string num)
@@ -220,24 +239,7 @@ namespace BaseConvertion
             return sum;
         }
 
-        static bool CheckHexadecimal(string input)
-        {
-            bool check = true;
-            PathOutput += "A";
-            foreach (char x in input) // A
-            {
-                PathOutput += "B";
-                if (x < '0' || ('9' < x && x < 'A') || ('F' < x && x < 'a') || x > 'f') // B
-                {
-                    PathOutput += "C";
-                    check = false; // C
-                    break;
-                } // D
-                PathOutput += "D";
-            } // E
-            PathOutput += "E";
-            return check;
-        }
+        
 
         static int ConvertHexadecimal(String Hexa)
         {
