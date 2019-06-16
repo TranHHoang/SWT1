@@ -11,7 +11,7 @@ namespace BaseConvertion
 
         static void Main(string[] args)
         {
-            Console.WriteLine("======================== Covert ======================");
+            Console.WriteLine("======================== Convert ======================");
             bool flag;
             do
             {
@@ -43,7 +43,7 @@ namespace BaseConvertion
                         check = false; // E
                     } // F
                     PathOutput += "F";
-                }
+                }// G
             }
             catch (OverflowException) // H
             {
@@ -59,7 +59,6 @@ namespace BaseConvertion
             PathOutput += "L";
             return check; // L
         }
-
 
         static bool checkBinary(string num)
         {
@@ -78,10 +77,11 @@ namespace BaseConvertion
                         check = true; // F
                     } // G
                 }
-                return check; // H
-            }
-            return false; // I
+            } // H
+            
+            return check; // I
         }
+
         static bool CheckOctal(string num)
         {
             int mod, temp;
@@ -107,17 +107,16 @@ namespace BaseConvertion
                         check = true;
                     } // I
                 }
-                // J
-                return check;
             }
-            // K
-            return false;
+            // J
+            return check; // K
         }
+
         static int ConvertBinary(string num)
         {
             int count = 0;
             int sum = 0;
-            for (int i = num.Length; i >= 0; i--) // A
+            for (int i = num.Length - 1; i >= 0; i--) // A
             {
                 // B
                 sum += (int)(char.GetNumericValue(num[i]) * Math.Pow(2, count));
@@ -126,6 +125,7 @@ namespace BaseConvertion
             // C
             return sum;
         }
+
         static int ConvertOctal(int x)
         {
             int mod;
@@ -142,6 +142,7 @@ namespace BaseConvertion
             // C
             return sum;
         }
+
         static bool CheckHexadecimal(string input)
         {
             bool check = true;
@@ -156,6 +157,7 @@ namespace BaseConvertion
             // F
             return check;
         }
+
         static int ConvertHexadecimal(String Hexa)
         {
             Hexa = Hexa.ToUpper(); // A
@@ -181,6 +183,7 @@ namespace BaseConvertion
             // H
             return sum;
         }
+
         static bool DisplayMenu()
         {
             string num;
