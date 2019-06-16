@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace BaseConvertion
+namespace BaseConversion
 {
-    class Program
+    public class Program
     {
         public static string PathOutput { get; set; } = "";
 
@@ -61,7 +58,7 @@ namespace BaseConvertion
             } while (true);
         }
 
-        static bool checkValidate(string input, int min, int max)
+        public static bool checkValidate(string input, int min, int max)
         {
             bool check = true;
 
@@ -104,80 +101,56 @@ namespace BaseConvertion
             return check; // L
         }
 
-        static bool checkBinary(string num)
+        public static bool checkBinary(string num)
         {
             bool check = false;
 
-            PathOutput += "B";
-            foreach (char x in num) // B
+            PathOutput = "A";
+            foreach (char x in num) // A
             {
-                PathOutput += "C";
-                if (x != '0' && x != '1') // C
+                PathOutput += "B";
+                if (x != '0' && x != '1') // B
                 {
-                    PathOutput += "D";
-                    check = false; // D
+                    PathOutput += "C";
+                    check = false; // C
                     break;
                 }
                 else
                 {
-                    PathOutput += "E";
-                    check = true; // E
-                } // F
-                PathOutput += "F";
-            } // G
+                    PathOutput += "D";
+                    check = true; // D
+                } // E
+                PathOutput += "E";
+            } // F
+            PathOutput += "F";
+
             PathOutput += "G";
-
-
-            PathOutput += "I";
-            Console.WriteLine(PathOutput);
-            return check; // I
+            return check; // G
         }
 
-        static bool CheckOctal(string num)
+        public static bool CheckOctal(string input)
         {
-            int mod, temp;
-            bool check = checkValidate(num, int.MinValue, int.MaxValue); // A'
-            PathOutput = "A'";
-            PathOutput += "B";
-            if (check) // B
+            bool check = false;
+            PathOutput = "A";
+            foreach (char x in input) // A
             {
-                PathOutput += "C";
-                // C
-                temp = Convert.ToInt32(num);
-                PathOutput += "D";
-                while (temp > 0) // D
+                PathOutput += "B";
+                if (x < '0' || x > '7') // B
                 {
-                    PathOutput += "E";
-                    // E
-                    mod = temp % 10;
-                    temp /= 10;
-                    PathOutput += "F";
-                    if (mod > 7) // F
-                    {
-                        PathOutput += "G";
-                        // G
-                        check = false;
-                        break;
-                    }
-                    else
-                    {
-                        PathOutput += "H";
-                        // H
-                        check = true;
-                    } // I
-                    PathOutput += "I";
-                } // J
-                PathOutput += "J";
-            } // K
-            PathOutput += "KL";
-            Console.WriteLine(PathOutput);
-            return check; // L
+                    PathOutput += "C";
+                    check = false; // C
+                    break;
+                } // D
+                PathOutput += "D";
+            } // E
+            PathOutput += "EF";
+            return check; // F
         }
 
-        static bool CheckHexadecimal(string input)
+        public static bool CheckHexadecimal(string input)
         {
             bool check = true;
-            PathOutput += "A";
+            PathOutput = "A";
             foreach (char x in input) // A
             {
                 PathOutput += "B";
@@ -190,96 +163,102 @@ namespace BaseConvertion
                 PathOutput += "D";
             } // E
             PathOutput += "EF";
-            Console.WriteLine(PathOutput);
             return check; // F
         }
 
-        static int ConvertBinary(string num)
+        public static int ConvertBinary(string num)
         {
             int count = 0;
             int sum = 0;
-            PathOutput = "A";
-            bool check = checkBinary(num);
-            if (check)
+            PathOutput = "A'";
+            bool check = checkBinary(num); // A'
+
+            PathOutput += "B";
+            if (check) // B
             {
-                for (int i = num.Length - 1; i >= 0; i--) // A
+                PathOutput = "C";
+                for (int i = num.Length - 1; i >= 0; i--) // C
                 {
-                    PathOutput += "B";
-                    // B
+                    // D
+                    PathOutput += "D";
                     sum += (int)(char.GetNumericValue(num[i]) * Math.Pow(2, count));
                     count++;
-                }
-            }
-            PathOutput += "CD";
-            // C
-            Console.WriteLine(PathOutput);
-            return sum; // D
+                } // E
+                PathOutput += "E";
+            } // F
+            PathOutput += "FG";
+            return sum; // G
         }
 
-        static int ConvertOctal(string x)
+        public static int ConvertOctal(string x)
         {
             int mod;
             int count = 0;
             int sum = 0;
-            PathOutput = "A";
-            bool Check = CheckOctal(x);
-            if (Check)
+            PathOutput = "A'";
+            bool Check = CheckOctal(x); // A'
+            PathOutput += "B";
+            if (Check) // B
             {
+                PathOutput += "C";
+                // C
                 int num = Convert.ToInt32(x);
-                while (num > 0) // A
+                PathOutput += "D";
+                while (num > 0) // D
                 {
-                    PathOutput += "B";
-
-                    // B
+                    // E
+                    PathOutput += "E";
                     mod = num % 10;
                     num /= 10;
                     sum += (int)(mod * Math.Pow(8, count));
                     count++;
-                }
-            }
-            // C
-            PathOutput += "CD";
-            Console.WriteLine(PathOutput);
-            return sum; // D
+                } // F
+                PathOutput += "F";
+            } // G
+
+            PathOutput += "GH";
+            return sum; // H
         }
 
-        static int ConvertHexadecimal(String Hexa)
+        public static int ConvertHexadecimal(String Hexa)
         {
-            PathOutput += "A";
             int sum = 0;
             int count = 0;
+            PathOutput = "A'";
+            bool Check = CheckHexadecimal(Hexa); // A'
             PathOutput += "B";
-            bool Check = CheckHexadecimal(Hexa);
-            if (Check)
+            if (Check) // B
             {
-                Hexa = Hexa.ToUpper(); // A
-                char[] temp = Hexa.ToCharArray(); // B
-
                 PathOutput += "C";
-                for (int i = temp.Length - 1; i >= 0; i--) // C
+                Hexa = Hexa.ToUpper(); // C
+                PathOutput += "D";
+                char[] temp = Hexa.ToCharArray(); // D
+
+                PathOutput += "E";
+                for (int i = temp.Length - 1; i >= 0; i--) // E
                 {
-                    PathOutput += "D";
-                    if (char.IsDigit(temp[i])) // D
+                    PathOutput += "F";
+                    if (char.IsDigit(temp[i])) // F
                     {
-                        PathOutput += "E";
-                        // E
-                        sum += (int)(Char.GetNumericValue(temp[i]) * Math.Pow(16, count));
+                        PathOutput += "G";
+                        // G
+                        sum += (int)(char.GetNumericValue(temp[i]) * Math.Pow(16, count));
                         count++;
                     }
                     else
                     {
-                        PathOutput += "F";
-                        // F
+                        PathOutput += "H";
+                        // H
                         int num = temp[i] - 'A' + 10;
                         sum += (int)(num * Math.Pow(16, count));
                         count++;
-                    } // G
-                    PathOutput += "G";
-                } // H
-            }
-            PathOutput += "HI";
-            Console.WriteLine(PathOutput);
-            return sum; // I
+                    } // I
+                    PathOutput += "I";
+                } // J
+                PathOutput += "J";
+            } // K
+            PathOutput += "KL";
+            return sum; // L
         }
     }
 }

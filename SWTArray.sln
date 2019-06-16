@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BBTestArray", "TestArray\BB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WBTestArray", "WBTestArray\WBTestArray.csproj", "{47E83650-A61A-4D8C-AEDB-538A4C99035A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseConvertion", "BaseConvertion\BaseConvertion.csproj", "{D57C7B02-5266-4DEB-B313-1E5D888ABF64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseConversion", "BaseConvertion\BaseConversion.csproj", "{D57C7B02-5266-4DEB-B313-1E5D888ABF64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WBTestConversion", "WBTestConversion\WBTestConversion.csproj", "{1F7DA998-52CE-498A-9E0B-75C39662ACFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{D57C7B02-5266-4DEB-B313-1E5D888ABF64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D57C7B02-5266-4DEB-B313-1E5D888ABF64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D57C7B02-5266-4DEB-B313-1E5D888ABF64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F7DA998-52CE-498A-9E0B-75C39662ACFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F7DA998-52CE-498A-9E0B-75C39662ACFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F7DA998-52CE-498A-9E0B-75C39662ACFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F7DA998-52CE-498A-9E0B-75C39662ACFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
