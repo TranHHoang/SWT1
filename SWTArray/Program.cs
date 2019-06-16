@@ -181,7 +181,7 @@ namespace SWTArray
         public static void selectionsortup(int[] a)
         {
             int i, j, temp;
-            PathOutput += "A";
+            PathOutput = "A";
             for (i = 0; i < a.Length; i++) // A
             {
                 PathOutput += "B";
@@ -206,7 +206,7 @@ namespace SWTArray
         public static void selectionsortdown(int[] a)
         {
             int i, j, temp;
-            PathOutput += "A";
+            PathOutput = "A";
             for (i = 0; i < a.Length; i++) // A
             {
                 PathOutput += "B";

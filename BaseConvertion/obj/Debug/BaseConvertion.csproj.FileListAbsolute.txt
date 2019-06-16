@@ -10,9 +10,18 @@ C:\Users\user\Downloads\BaseConvertion\BaseConvertion\obj\Debug\BaseConvertion.c
 C:\Users\user\Downloads\BaseConvertion\BaseConvertion\obj\Debug\BaseConvertion.csproj.CoreCompileInputs.cache
 C:\Users\user\Downloads\BaseConvertion\BaseConvertion\obj\Debug\BaseConvertion.exe
 C:\Users\user\Downloads\BaseConvertion\BaseConvertion\obj\Debug\BaseConvertion.pdb
+<<<<<<< HEAD
 C:\Users\Kiris\OneDrive\Desktop\SWT1\BaseConvertion\bin\Debug\BaseConvertion.exe
 C:\Users\Kiris\OneDrive\Desktop\SWT1\BaseConvertion\bin\Debug\BaseConvertion.pdb
 C:\Users\Kiris\OneDrive\Desktop\SWT1\BaseConvertion\obj\Debug\BaseConvertion.csprojAssemblyReference.cache
 C:\Users\Kiris\OneDrive\Desktop\SWT1\BaseConvertion\obj\Debug\BaseConvertion.csproj.CoreCompileInputs.cache
 C:\Users\Kiris\OneDrive\Desktop\SWT1\BaseConvertion\obj\Debug\BaseConvertion.exe
 C:\Users\Kiris\OneDrive\Desktop\SWT1\BaseConvertion\obj\Debug\BaseConvertion.pdb
+=======
+C:\Users\tran hoang\source\repos\SWT1\BaseConvertion\bin\Debug\BaseConvertion.exe
+C:\Users\tran hoang\source\repos\SWT1\BaseConvertion\bin\Debug\BaseConvertion.pdb
+C:\Users\tran hoang\source\repos\SWT1\BaseConvertion\obj\Debug\BaseConvertion.csprojAssemblyReference.cache
+C:\Users\tran hoang\source\repos\SWT1\BaseConvertion\obj\Debug\BaseConvertion.csproj.CoreCompileInputs.cache
+C:\Users\tran hoang\source\repos\SWT1\BaseConvertion\obj\Debug\BaseConvertion.exe
+C:\Users\tran hoang\source\repos\SWT1\BaseConvertion\obj\Debug\BaseConvertion.pdb
+>>>>>>> ca90ef337584f75d55ac9232eabf7a5fde455953

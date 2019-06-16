@@ -20,7 +20,7 @@ namespace WBTestArray
         [Test]
         public void TestValidate1()
         {
-            var expectedPath = "ACD";
+            var expectedPath = "ADEF";
             var input = "abc";
             var expectedResult = false;
 
@@ -33,9 +33,22 @@ namespace WBTestArray
         [Test]
         public void TestValidate2()
         {
-            var expectedPath = "ABD";
+            var expectedPath = "ABCF";
             var input = "-2147483649";
             var expectedResult = false;
+
+            Assert.AreEqual(expectedResult, Program.checkValidate(input));
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+
+        // White box tesing 
+        // Technique: statement coverage
+        [Test]
+        public void TestValidate3()
+        {
+            var expectedPath = "AF";
+            var input = "10";
+            var expectedResult = true;
 
             Assert.AreEqual(expectedResult, Program.checkValidate(input));
             Assert.AreEqual(expectedPath, Program.PathOutput);
@@ -82,18 +95,20 @@ namespace WBTestArray
         // White box tesing 
         // Technique: statement coverage
         [Test]
-        public void TestSearch()
+        public void TestSearch1()
         {
             var inputArr = new[] { 1, 2, 3, 4 };
             var input = "abc";
 
             var expectedOutput = -1;
-            var expectedPath = "A'HI";
+            var expectedPath = "A'BHI";
 
             Assert.AreEqual(expectedOutput, Program.search(inputArr, input));
             Assert.AreEqual(expectedPath, Program.PathOutput);
         }
 
+        // White box tesing 
+        // Technique: statement coverage
         [Test]
         public void TestSearch2()
         {
@@ -101,7 +116,22 @@ namespace WBTestArray
             var input = "5";
 
             var expectedOutput = -1;
-            var expectedPath = "A’BCDEI";
+            var expectedPath = "A'BCDFDFDFDFGHI";
+
+            Assert.AreEqual(expectedOutput, Program.search(inputArr, input));
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+
+        // White box tesing 
+        // Technique: statement coverage
+        [Test]
+        public void TestSearch3()
+        {
+            var inputArr = new[] { 1, 2, 3, 4 };
+            var input = "1";
+
+            var expectedOutput = 0;
+            var expectedPath = "A'BCDEGHI";
 
             Assert.AreEqual(expectedOutput, Program.search(inputArr, input));
             Assert.AreEqual(expectedPath, Program.PathOutput);
@@ -109,29 +139,130 @@ namespace WBTestArray
         // White box tesing 
         // Technique: statement coverage
         [Test]
-        public void TestRemove()
+        public void TestRemove1()
         {
             var inputArr = new[] { 1, 2, 3, 4 };
             var input = "abc";
 
-            var expectedSize = 3;
-            var expectedEnd = 4;
-            var expectedPath = "AD";
+            var expectedSize = 4;
+            var expectedArr = new[] { 1, 2, 3, 4 };
+            var expectedPath = "A'BM";
 
-            Program.removea(ref inputArr, "2");
+            Program.removea(ref inputArr, input);
 
+            Assert.AreEqual(expectedArr, inputArr);
             Assert.AreEqual(expectedSize, inputArr.Length);
-            Assert.AreEqual(expectedEnd, inputArr[inputArr.Length - 1]);
             Assert.AreEqual(expectedPath, Program.PathOutput);
         }
+        // White box tesing 
+        // Technique: statement coverage
+        [Test]
+        public void TestRemove2()
+        {
+            var inputArr = new[] { 1, 2, 3, 4 };
+            var input = "2";
 
+            var expectedSize = 3;
+            var expectedArr = new[] { 1, 3, 4 };
+            var expectedPath = "A'BCDHDEFFGIJKLM";
+
+            Program.removea(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: statement coverage
+        [Test]
+        public void TestRemove3()
+        {
+            var inputArr = new[] { 1, 3, 4 };
+            var input = "10";
+
+            var expectedSize = 3;
+            var expectedArr = new[] { 1, 3, 4 };
+            var expectedPath = "A'BCDHDHDHIJLM";
+
+            Program.removea(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: statement coverage
+        [Test]
+        public void TestRemoveAll1()
+        {
+            var inputArr = new[] { 1, 1, 2, 3 };
+            var input = "abc";
+
+            var expectedSize = 4;
+            var expectedArr = new[] { 1, 1, 2, 3 };
+            var expectedPath = "A'BM";
+
+            Program.removeall(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: statement coverage
+        [Test]
+        public void TestRemoveAll2()
+        {
+            var inputArr = new[] { 1, 1, 2, 3 };
+            var input = "1";
+
+            var expectedSize = 2;
+            var expectedArr = new[] { 2, 3 };
+            var expectedPath = "A'BCDEFFFGHDEFFGHDHDHIJKLM";
+
+            Program.removeall(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: statement coverage
+        [Test]
+        public void TestSortUp()
+        {
+            var inputArr = new[] { 1, 2, 4, 3 };
+
+            var expectedArr = new[] { 1, 2, 3, 4 };
+            var expectedPath = "ABCECECEFBCECEFBCDEFBFG";
+
+            Program.selectionsortup(inputArr);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: statement coverage
+        [Test]
+        public void TestSortDown()
+        {
+            var inputArr = new[] { 4, 3, 1, 2 };
+
+            var expectedArr = new[] { 4, 3, 2, 1 };
+            var expectedPath = "ABCECECEFBCECEFBCDEFBFG";
+
+            Program.selectionsortdown(inputArr);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
         // White box tesing 
         // Technique: decision coverage
         [Test]
-        public void TestValidate3()
+        public void TestValidate4()
         {
             // TODO: Fix test case
-            var expectedPath = "ACD";
+            var expectedPath = "ADEF";
             var input = "abc";
             var expectedResult = false;
 
@@ -141,10 +272,10 @@ namespace WBTestArray
         // White box tesing 
         // Technique: decision coverage
         [Test]
-        public void TestValidate4()
+        public void TestValidate5()
         {
             // TODO: Fix test case
-            var expectedPath = "ABD";
+            var expectedPath = "ABCF";
             var input = "-2147483649";
 
             var expectedResult = false;
@@ -156,26 +287,12 @@ namespace WBTestArray
         // White box tesing 
         // Technique: decision coverage
         [Test]
-        public void TestValidate5()
-        {
-            // TODO: Fix test case
-            var expectedPath = "AD";
-            var input = "10";
-            var expectedResult = true;
-
-            Assert.AreEqual(expectedResult, Program.checkValidate(input));
-            Assert.AreEqual(expectedPath, Program.PathOutput);
-        }
-
-        // White box tesing 
-        // Technique: path coverage
-        [Test]
         public void TestValidate6()
         {
             // TODO: Fix test case
-            var expectedPath = "ACD";
-            var input = "abc";
-            var expectedResult = false;
+            var expectedPath = "AF";
+            var input = "10";
+            var expectedResult = true;
 
             Assert.AreEqual(expectedResult, Program.checkValidate(input));
             Assert.AreEqual(expectedPath, Program.PathOutput);
@@ -187,8 +304,8 @@ namespace WBTestArray
         public void TestValidate7()
         {
             // TODO: Fix test case
-            var expectedPath = "ABD";
-            var input = "-999999999999";
+            var expectedPath = "ADEF";
+            var input = "abc";
             var expectedResult = false;
 
             Assert.AreEqual(expectedResult, Program.checkValidate(input));
@@ -201,7 +318,21 @@ namespace WBTestArray
         public void TestValidate8()
         {
             // TODO: Fix test case
-            var expectedPath = "AD";
+            var expectedPath = "ABCF";
+            var input = "-999999999999";
+            var expectedResult = false;
+
+            Assert.AreEqual(expectedResult, Program.checkValidate(input));
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+
+        // White box tesing 
+        // Technique: path coverage
+        [Test]
+        public void TestValidate9()
+        {
+            // TODO: Fix test case
+            var expectedPath = "AF";
             var input = "100";
             var expectedResult = true;
 
@@ -282,6 +413,433 @@ namespace WBTestArray
 
             Assert.AreEqual(expectedSize, inputArr.Length);
             Assert.AreEqual(expectedEnd, inputArr[inputArr.Length - 1]);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: decision coverage
+        [Test]
+        public void TestSearch4()
+        {
+            var inputArr = new[] { 1, 2, 3, 4 };
+            var input = "abc";
+
+            var expectedOutput = -1;
+            var expectedPath = "A'BHI";
+
+            Assert.AreEqual(expectedOutput, Program.search(inputArr, input));
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: decision coverage
+        [Test]
+        public void TestSearch5()
+        {
+            var inputArr = new[] { 1, 2, 3, 4 };
+            var input = "5";
+
+            var expectedOutput = -1;
+            var expectedPath = "A'BCDFDFDFDFGHI";
+
+            Assert.AreEqual(expectedOutput, Program.search(inputArr, input));
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: decision coverage
+        [Test]
+        public void TestSearch6()
+        {
+            var inputArr = new[] { 1, 2, 3, 4 };
+            var input = "1";
+
+            var expectedOutput = 0;
+            var expectedPath = "A'BCDEGHI";
+
+            Assert.AreEqual(expectedOutput, Program.search(inputArr, input));
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+
+        // White box tesing 
+        // Technique: decision coverage
+        [Test]
+        public void TestRemove4()
+        {
+            var inputArr = new[] { 1, 2, 3, 4 };
+            var input = "abc";
+
+            var expectedSize = 4;
+            var expectedArr = new[] { 1, 2, 3, 4 };
+            var expectedPath = "A'BM";
+
+            Program.removea(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: decision coverage
+        [Test]
+        public void TestRemove5()
+        {
+            var inputArr = new[] { 1, 2, 3, 4 };
+            var input = "2";
+
+            var expectedSize = 3;
+            var expectedArr = new[] { 1, 3, 4 };
+            var expectedPath = "A'BCDHDEFFGIJKLM";
+
+            Program.removea(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: decision coverage
+        [Test]
+        public void TestRemove6()
+        {
+            var inputArr = new[] { 1, 3, 4 };
+            var input = "10";
+
+            var expectedSize = 3;
+            var expectedArr = new[] { 1, 3, 4 };
+            var expectedPath = "A'BCDHDHDHIJLM";
+
+            Program.removea(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+
+        // White box tesing 
+        // Technique: decision coverage
+        [Test]
+        public void TestRemoveAll3()
+        {
+            // Change test case
+            var inputArr = new[] { 1, 1, 2, 3 };
+            var input = "abc";
+
+            var expectedSize = 4;
+            var expectedArr = new[] { 1, 1, 2, 3 };
+            var expectedPath = "A'BM";
+
+            Program.removeall(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: decision coverage
+        [Test]
+        public void TestRemoveAll4()
+        {
+            var inputArr = new[] { 1, 1, 2, 3 };
+            var input = "1";
+
+            var expectedSize = 2;
+            var expectedArr = new[] { 2, 3 };
+            var expectedPath = "A'BCDEFFFGHDEFFGHDHDHIJKLM";
+
+            Program.removeall(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: decision coverage
+        [Test]
+        public void TestRemoveAll5()
+        {
+            var inputArr = new[] { 1, 1, 2, 3 };
+            var input = "10";
+
+            var expectedSize = 4;
+            var expectedArr = new[] { 1, 1, 2, 3 };
+            var expectedPath = "A'BCDHDHDHDHIJLM";
+
+            Program.removeall(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: decision coverage
+        [Test]
+        public void TestSortUp2()
+        {
+            var inputArr = new[] { 1, 2, 4, 3 };
+
+            var expectedArr = new[] { 1, 2, 3, 4 };
+            var expectedPath = "ABCECECEFBCECEFBCDEFBFG";
+
+            Program.selectionsortup(inputArr);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: decision coverage
+        [Test]
+        public void TestSortUp3()
+        {
+            var inputArr = new[] { 1, 2, 3, 4 };
+
+            var expectedArr = new[] { 1, 2, 3, 4 };
+            var expectedPath = "ABCECECEFBCECEFBCEFBFG";
+
+            Program.selectionsortup(inputArr);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: decision coverage
+        [Test]
+        public void TestSortDown2()
+        {
+            var inputArr = new[] { 4, 3, 1, 2 };
+
+            var expectedArr = new[] { 4, 3, 2, 1 };
+            var expectedPath = "ABCECECEFBCECEFBCDEFBFG";
+
+            Program.selectionsortdown(inputArr);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: decision coverage
+        [Test]
+        public void TestSortDown3()
+        {
+            var inputArr = new[] { 4, 3, 1, 2 };
+
+            var expectedArr = new[] { 4, 3, 2, 1 };
+            var expectedPath = "ABCECECEFBCECEFBCDEFBFG";
+
+            Program.selectionsortdown(inputArr);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: path coverage
+        [Test]
+        public void TestSearch7()
+        {
+            var inputArr = new[] { 1, 2, 3, 4 };
+            var input = "abc";
+
+            var expectedOutput = -1;
+            var expectedPath = "A'BHI";
+
+            Assert.AreEqual(expectedOutput, Program.search(inputArr, input));
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: path coverage
+        [Test]
+        public void TestSearch8()
+        {
+            var inputArr = new[] { 1, 2, 3, 4 };
+            var input = "5";
+
+            var expectedOutput = -1;
+            var expectedPath = "A'BCDFDFDFDFGHI";
+
+            Assert.AreEqual(expectedOutput, Program.search(inputArr, input));
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: path coverage
+        [Test]
+        public void TestSearch9()
+        {
+            var inputArr = new[] { 1, 2, 3, 4 };
+            var input = "1";
+
+            var expectedOutput = 0;
+            var expectedPath = "A'BCDEGHI";
+
+            Assert.AreEqual(expectedOutput, Program.search(inputArr, input));
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: path coverage
+        [Test]
+        public void TestRemove7()
+        {
+            var inputArr = new[] { 1, 2, 3, 4 };
+            var input = "abc";
+
+            var expectedSize = 4;
+            var expectedArr = new[] { 1, 2, 3, 4 };
+            var expectedPath = "A'BM";
+
+            Program.removea(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: path coverage
+        [Test]
+        public void TestRemove8()
+        {
+            var inputArr = new[] { 1, 2, 3, 4 };
+            var input = "2";
+
+            var expectedSize = 3;
+            var expectedArr = new[] { 1, 3, 4 };
+            var expectedPath = "A'BCDHDEFFGIJKLM";
+
+            Program.removea(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: path coverage
+        [Test]
+        public void TestRemove9()
+        {
+            var inputArr = new[] { 1, 3, 4 };
+            var input = "10";
+
+            var expectedSize = 3;
+            var expectedArr = new[] { 1, 3, 4 };
+            var expectedPath = "A'BCDHDHDHIJLM";
+
+            Program.removea(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: path coverage
+        [Test]
+        public void TestRemoveAll6()
+        {
+            // Change test case
+            var inputArr = new[] { 1, 1, 2, 3 };
+            var input = "abc";
+
+            var expectedSize = 4;
+            var expectedArr = new[] { 1, 1, 2, 3 };
+            var expectedPath = "A'BM";
+
+            Program.removeall(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: path coverage
+        [Test]
+        public void TestRemoveAll7()
+        {
+            // Change test case
+            var inputArr = new[] { 1, 1, 2, 3 };
+            var input = "1";
+
+            var expectedSize = 2;
+            var expectedArr = new[] { 2, 3 };
+            var expectedPath = "A'BCDEFFFGHDEFFGHDHDHIJKLM";
+
+            Program.removeall(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: path coverage
+        [Test]
+        public void TestRemoveAll8()
+        {
+            // Change test case
+            var inputArr = new[] { 1, 1, 2, 3 };
+            var input = "10";
+
+            var expectedSize = 4;
+            var expectedArr = new[] { 1, 1, 2, 3 };
+            var expectedPath = "A'BCDHDHDHDHIJLM";
+
+            Program.removeall(ref inputArr, input);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedSize, inputArr.Length);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: path coverage
+        [Test]
+        public void TestSortUp4()
+        {
+            var inputArr = new[] { 1, 2, 4, 3 };
+
+            var expectedArr = new[] { 1, 2, 3, 4 };
+            var expectedPath = "ABCECECEFBCECEFBCDEFBFG";
+
+            Program.selectionsortup(inputArr);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: path coverage
+        [Test]
+        public void TestSortUp5()
+        {
+            var inputArr = new[] { 1, 2, 3, 4 };
+
+            var expectedArr = new[] { 1, 2, 3, 4 };
+            var expectedPath = "ABCECECEFBCECEFBCEFBFG";
+
+            Program.selectionsortup(inputArr);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+
+        // White box tesing 
+        // Technique: path coverage
+        [Test]
+        public void TestSortDown4()
+        {
+            var inputArr = new[] { 4, 3, 1, 2 };
+
+            var expectedArr = new[] { 4, 3, 2, 1 };
+            var expectedPath = "ABCECECEFBCECEFBCDEFBFG";
+
+            Program.selectionsortdown(inputArr);
+
+            Assert.AreEqual(expectedArr, inputArr);
+            Assert.AreEqual(expectedPath, Program.PathOutput);
+        }
+        // White box tesing 
+        // Technique: path coverage
+        [Test]
+        public void TestSortDown5()
+        {
+            var inputArr = new[] { 4, 3, 2, 1 };
+
+            var expectedArr = new[] { 4, 3, 2, 1 };
+            var expectedPath = "ABCECECEFBCECEFBCEFBFG";
+
+            Program.selectionsortdown(inputArr);
+
+            Assert.AreEqual(expectedArr, inputArr);
             Assert.AreEqual(expectedPath, Program.PathOutput);
         }
     }
